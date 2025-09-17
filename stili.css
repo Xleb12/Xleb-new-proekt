@@ -1,0 +1,31 @@
+.body {
+    background-color: #00000033;
+}
+.Document {
+    width: 1000px;
+    margin: 0 auto;
+    max-height: 934px;
+    display: grid;
+    grid-template-columns: 370px 630px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.title {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.aram {
+    background-color: #D8D9DA;
+    border-radius: 10px;
+}
+.zamzam {
+    background-color: blue;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding: 20px 0;
+    margin-top: 20px;
+}
