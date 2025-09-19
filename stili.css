@@ -1,14 +1,20 @@
 .body {
-    background-color: #00000033;
+    background-color: #D8D9DA;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
 }
 .Document {
     width: 1000px;
+    height: 90;
     margin: 0 auto;
     max-height: 934px;
+    background-color: white;
     display: grid;
     grid-template-columns: 370px 630px;
-    border: 1px solid black;
-    border-radius: 10px;
+    overflow: hidden;
 }
 .title {
     font-size: 24px;
@@ -17,8 +23,9 @@
     align-items: center; 
 }
 .aram {
-    background-color: #D8D9DA;
-    border-radius: 10px;
+    border: 1px solid black;
+    border-radius: 10px 0 0 10px;
+    padding: 10px;
 }
 .zamzam {
     background-color: blue;
@@ -26,6 +33,54 @@
     text-align: center;
     color: white;
     font-weight: bold;
-    padding: 20px 0;
-    margin-top: 20px;
+    padding: 10px 0;
+    margin-top: 30px;
 }
+.teg {
+    justify-content: left;
+    margin-top: 15px;  
+}
+.tegi {
+    padding: 20px;
+}
+.lada {
+    border: 1px solid black;
+    border-radius: 0 10px 10px 0;
+    //*display: flex;
+    flex-direction: column;**/
+    justify-content: center;  
+}
+.stroka {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    padding: 10px 0;
+    margin-left: 15px;
+}
+.poisk {
+    border: 1px solid black;
+    border-radius: 10px;
+    justify-content: left; 
+}
+.foto {
+    background-color: blue;
+    color: white;
+    justify-content: right;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.sidan {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.h1 {
+    padding-left: 10px;
+    justify-content: left;
+    font-size: 30px;
+}
+.h2 {
+    justify-content: right;
+    padding-right: 10px;
+    background-color: burlywood;
+    border-radius: 5px;
+}
+
