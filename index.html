@@ -12,23 +12,38 @@
             <div class="title">Мои заметки</div>
             <div class="zamzam" class="title">Новая заметка</div>
             <div class="teg">Теги</div>
-            <div class="tegi" id="1">Все</div>
-            <div class="tegi" id="2">Идеи</div>
-            <div class="tegi" id="3">Личное</div>
-            <div class="tegi" id="4">Работа</div>
-            <div class="tegi">Список покупок</div>
+            <li class="tegi" id="1">Все</li>
+            <li class="tegi" id="2">Идеи</li>
+            <li class="tegi" id="3">Личное</li>
+            <li class="tegi" id="4">Работа</li>
+            <li class="tegi">Список покупок</li>
         </div>
         <div class="lada">
             <div class="stroka">
                 <input class="poisk" type="text" placeholder="Поиск">
-                <img class="foto" src="./images/Vector.jpg" alt="Лупа">
+                <button class="foto" id="search_bth"><img class="foto" src="./images/Vector.jpg" alt="Лупа"></button>
             </div>
             <div class="sidan">
                 <span class="h1">Сдать отчёт</span>
-                <p class="h2">23 июля 2024</p>
+                <span class="h2">23 июля 2024</span>
                 <span class="h2">Работа</span>
             </div>
         </div>
     </div>
+    <div class="overlay" id="overlay">
+        <div class="modal">
+            <button class="modal_close" id="modal_close">X</button>
+            <form class="modal_form">
+                <input class="modal_input" type="text" placeholder="Заголовок">
+                <select class="modal_input" name="select" id="modal_select">
+                    <option value="value1">Значение1</option>
+                    <option value="value2">Значение2</option>
+                    <option value="value3">Значение3</option>
+                </select>
+                <button class="modal_bth-save" id="modal-save">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <script src="./js.js" defer></script>
 </body>
 </html>

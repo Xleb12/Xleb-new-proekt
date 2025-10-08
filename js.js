@@ -54,6 +54,69 @@ search.addEventListener('keydown', function(event){
     }
 });
 
-function createTag{
-    const element = document
+function createTag(tag){
+    const element = document.createElement('li')
+    element.classList.add('tagi')
 }
+
+function createNote(note){
+    const element = document.createElement('div')
+    element.classList.add("sidan")
+    
+    const title = document.createElement('span')
+    title.innerText = note.title
+    title.classList.add("h1")
+
+    const date = document.createElement('span')
+    date.classList.add("h2")
+    date.innerText = new Date().toDateString()
+    
+    const tag = document.createElement('span')
+    tag.classList.add("h3")
+    tag.innerText = tags.find(obj => obj.id === note.tag).title
+
+    element.appendChild(title)
+    element.appendChild(date)
+    element.appendChild(tag)
+    return element
+}
+function getNotes(searchValue){
+    const filteredNotes = notes.filter((i) => {
+        return i.title.startsWith(searchValue)
+    })
+    return filteredNotes
+}
+
+function renderMenu(){
+    for(let tag of tags){
+        const element = createTag(tag)
+        element.addEventListener("click",() =>{
+            activeTag = tag.id
+            render()
+        })
+        menu.appendChild(element)
+    }
+}
+
+function render(){
+    list.innerHTML=''
+    let filtered=getNotes(search.value)
+
+    if(activeTag !== 1){
+        filtered=filtered.filter(i => i.tag === activeTag)
+    }
+    if (filtered.lenght === 0){
+        list.innerText = 'Ничего не найдено  *~*'
+        return
+    }
+    for (let i of filtered){
+        const element = createNote(i)
+        list.appendChild(element)
+    }
+}
+function init(){
+    renderMenu()
+    render()
+    bthSearh.addEventListener('click',render)
+}
+init()
