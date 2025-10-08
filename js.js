@@ -1,21 +1,24 @@
 const list = document.getElementById('list')
 const search = document.getElementById('search')
 const bthSearh = document.getElementById('search-bth')
+const bthModalO = document.getElementById('bth-modalOpen')
+const bthModalC = document.getElementById('modal-close')
+const overlay = document.getElementById('overlay')
 const menu = document.getElementById('menu')
 let activeTag = 1
 const tags = [
     {
         id:1,
         title:'Все'
-    }
+    },
     {
         id:2,
         title:'Идеи'
-    }
+    },
     {
         id:3,
         title:'Личное'
-    }
+    },
     {
         id:4,
         title:'Работа'
@@ -24,25 +27,25 @@ const tags = [
 const note = [
     {
         id:1,
-        title:'Сдать отчёт'
+        title:'Сдать отчёт',
         tag:4,
         apdateDate: new Date().toDateString()
-    }
+    },
     {
         id:2,
-        title:'Сделать днд поле битвы для днд'
+        title:'Сделать днд поле битвы для днд',
         tag:4,
         apdateDate: new Date().toDateString()
-    }
+    },
     {
         id:3,
-        title:'Придумать дндн компаию'
+        title:'Придумать дндн компаию',
         tag:4,
         apdateDate: new Date().toDateString()
-    }
+    },
     {
         id:4,
-        title:'Сделать всё в мудл оп анг.'
+        title:'Сделать всё в мудл оп анг.',
         tag:4,
         apdateDate: new Date().toDateString()
     }
@@ -118,5 +121,8 @@ function init(){
     renderMenu()
     render()
     bthSearh.addEventListener('click',render)
+    bthModalO.addEventListener('click',()=>{
+        overlay.classList.add('openM')
+    })
 }
 init()

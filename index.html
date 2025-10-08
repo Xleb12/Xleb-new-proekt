@@ -10,7 +10,7 @@
     <div class="Document">
         <div class="aram">
             <div class="title">Мои заметки</div>
-            <div class="zamzam" class="title">Новая заметка</div>
+            <button class="zamzam" class="title" id="bth-modalOpen">Новая заметка</button>
             <div class="teg">Теги</div>
             <li class="tegi" id="1">Все</li>
             <li class="tegi" id="2">Идеи</li>
@@ -21,7 +21,7 @@
         <div class="lada">
             <div class="stroka">
                 <input class="poisk" type="text" placeholder="Поиск">
-                <button class="foto" id="search_bth"><img class="foto" src="./images/Vector.jpg" alt="Лупа"></button>
+                <button class="foto" id="search-bth"><img class="foto" src="./images/Vector.jpg" alt="Лупа"></button>
             </div>
             <div class="sidan">
                 <span class="h1">Сдать отчёт</span>
@@ -32,10 +32,10 @@
     </div>
     <div class="overlay" id="overlay">
         <div class="modal">
-            <button class="modal_close" id="modal_close">X</button>
+            <button class="modal_close" id="modal-close">X</button>
             <form class="modal_form">
-                <input class="modal_input" type="text" placeholder="Заголовок">
-                <select class="modal_input" name="select" id="modal_select">
+                <input class="modal_input" id="modal-input" type="text" placeholder="Заголовок">
+                <select class="modal_input" name="select" id="modal-select">
                     <option value="value1">Значение1</option>
                     <option value="value2">Значение2</option>
                     <option value="value3">Значение3</option>
