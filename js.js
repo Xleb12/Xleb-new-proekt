@@ -4,6 +4,7 @@ const bthSearh = document.getElementById('search-bth')
 const bthModalO = document.getElementById('bth-modalOpen')
 const bthModalC = document.getElementById('modal-close')
 const overlay = document.getElementById('overlay')
+const select = document.getElementById('modal-select')
 const menu = document.getElementById('menu')
 let activeTag = 1
 const tags = [
@@ -24,7 +25,7 @@ const tags = [
         title:'Работа'
     }
 ]
-const note = [
+const notes = [
     {
         id:1,
         title:'Сдать отчёт',
@@ -34,13 +35,13 @@ const note = [
     {
         id:2,
         title:'Сделать днд поле битвы для днд',
-        tag:4,
+        tag:2,
         apdateDate: new Date().toDateString()
     },
     {
         id:3,
-        title:'Придумать дндн компаию',
-        tag:4,
+        title:'Придумать днд компанию',
+        tag:3,
         apdateDate: new Date().toDateString()
     },
     {
@@ -53,13 +54,15 @@ const note = [
 search.addEventListener('keydown', function(event){
     if (event.key ==='Enter'|| event.keyCode === 13){
         event.preventDefault()
-        bthSearh.click
+        bthSearh.click();
     }
 });
 
 function createTag(tag){
     const element = document.createElement('li')
-    element.classList.add('tagi')
+    element.classList.add('tegi')
+    element.innerText = tag.title
+    return element
 }
 
 function createNote(note){
@@ -117,12 +120,25 @@ function render(){
         list.appendChild(element)
     }
 }
+function createModalSelect(){
+    for (let tag of tags){
+        const element = document.createElement('option')
+        element.value=tag.id
+        element.innerText=tag.title
+        select.appendChild(element)
+    }
+}
 function init(){
     renderMenu()
     render()
+    createModalSelect()
     bthSearh.addEventListener('click',render)
     bthModalO.addEventListener('click',()=>{
         overlay.classList.add('openM')
+    })
+    bthModalC.addEventListener('click',() =>{
+        overlay.classList.toggle('openM')
+
     })
 }
 init()
